@@ -21,8 +21,8 @@ jobs:
             export NVM_DIR=~/.nvm
             sourse ~/.nvm/nvm.sh
             cd ~/signreg
-            git pull o main
+            git pull origin main
             yarn install
             yarn build
             kill -9 `lsof -t -i:80`
-            yarn start & bg
+            yarn start -p 90 & bg
