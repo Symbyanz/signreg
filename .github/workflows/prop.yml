@@ -20,8 +20,7 @@ jobs:
           script:
             export NVM_DIR=~/.nvm
             sourse ~/.nvm/nvm.sh
-            node -v
-            cd ~/autodeploy-min
+            cd ~/signreg
             git pull o main
             yarn install
             yarn build
