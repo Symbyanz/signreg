@@ -25,4 +25,4 @@ jobs:
             yarn install
             yarn build
             kill -9 `lsof -t -i:80`
-            yarn start -p 90 & bg
+            yarn start & bg
