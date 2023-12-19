@@ -3,7 +3,6 @@ import './Accordion.scss'
 import Paragraph from '../Paragraph/Paragraph'
 import SubHeading from '../SubHeading/SubHeading'
 import { useEffect, useRef, useState } from 'react'
-import { useMediaQuery } from 'react-responsive'
 
 
 interface AccordionProps {
@@ -58,6 +57,7 @@ const Accordion = ({ className, items, columns = 1 }: AccordionProps) => {
     useEffect(() => {
         setActiveIndex(0)
         window.addEventListener('resize', () => {!activeIndex && setActiveIndex(null)})
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     switch (columns) {

@@ -2,6 +2,7 @@ import { DetailedHTMLProps, ForwardedRef, HTMLAttributes, forwardRef } from 'rea
 import './Input.scss'
 
 interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+    placeholder?: string
 }
 
 const Input = forwardRef(({ className, ...props }: Props, ref: ForwardedRef<HTMLInputElement>): JSX.Element => {

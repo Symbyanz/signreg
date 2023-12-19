@@ -5,8 +5,8 @@ on:
     branches:
       - main
 
-jobs
-  build
+jobs:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,10 +20,9 @@ jobs
           script:
             export NVM_DIR=~/.nvm
             sourse ~/.nvm/nvm.sh
-            node -v
-            cd ~/autodeploy-min
-            git pull o main
+            cd ~/signreg
+            git pull origin main
             yarn install
             yarn build
             kill -9 `lsof -t -i:80`
-            yarn start & bg
+            yarn start -p 90 & bg

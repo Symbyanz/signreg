@@ -107,7 +107,7 @@ const Form = ({ className, formId, ...props }: Props) => {
                 <Paragraph className='success__text' size='super-small'>Сообщение отправлено!</Paragraph>
             </div>
         </form>
-        
+
     )
 }
 

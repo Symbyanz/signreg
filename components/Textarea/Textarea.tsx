@@ -2,6 +2,7 @@ import { DetailedHTMLProps, ForwardedRef, TextareaHTMLAttributes, forwardRef } f
 import './Textarea.scss'
 
 interface Props extends DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {
+    placeholder?:string
 }
 
 const Textarea = forwardRef(({ className, ...props }: Props, ref: ForwardedRef<HTMLTextAreaElement>): JSX.Element => {
