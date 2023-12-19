@@ -1,0 +1,98 @@
+@import "/app/mixins.scss";
+.heading-box {
+    margin-bottom: 40px;
+    @include breakpoint(medium) {
+        margin-bottom: 30px;
+    }
+    @include breakpoint(small) {
+        margin-bottom: 20px;
+    }
+    &__title {
+        text-align: center;
+        margin-bottom: 15px;
+        @include breakpoint(large) {
+            margin-bottom: 10px;
+        }
+        @include breakpoint(medium) {
+            margin-bottom: 8px;
+        }
+        @include breakpoint(small) {
+            margin-bottom: 5px;
+            text-align: left;
+        }
+    }
+
+    &__subtitle {
+        text-align: center;
+        @include breakpoint(small) {
+            text-align: left;
+        }
+    }
+}
+
+.heading-box_align-left{
+    .heading-box__title,
+    .heading-box__subtitle{
+        text-align: left;
+    }
+}
+
+
+.heading-box_line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width: 1280px) {
+        display: block;
+    }
+    .heading-box__title {
+        text-align: left;
+        flex: 0 0 500px;
+        @include breakpoint(large) {
+            flex: 0 0 480px;
+        }
+        @media screen and (max-width: 1280px) {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        @include breakpoint(medium) {
+            margin-bottom: 8px;
+        }
+        @include breakpoint(small) {
+            text-align: left;
+            margin-bottom: 5px;
+        }
+    }
+    .heading-box__subtitle {
+        text-align: right;
+        flex: 0 0 500px;
+        @include breakpoint(large) {
+            flex: 0 0 480px;
+        }
+        @media screen and (max-width: 1280px) {
+            text-align: center;
+        }
+        @include breakpoint(small) {
+            text-align: left;
+        }
+    }
+
+    .heading-box__line {
+        width: 320px;
+        height: 6px;
+        flex-shrink: 0;
+        background: radial-gradient(50% 50% at 50% 50%, var(--color-blue) 0%, rgba(38, 38, 255, 0) 100%);
+        opacity: 0.7;
+        @include breakpoint(large) {
+            width: 220px;
+            height: 5px;
+        }
+        @media screen and (max-width: 1340px) {
+            width: 160px;
+            height: 4px;
+        }
+        @media screen and (max-width: 1280px) {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+@import "/app/mixins.scss";
+.contacts {
+    &__breadcrumbs {
+        margin-bottom: 10px;
+        @include breakpoint(medium) {
+            margin-bottom: 5px;
+        }
+        @include breakpoint(small) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 30px;
+        @include breakpoint(medium) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__box {
+        display: grid;
+        grid-template-columns: 540px 1fr;
+        justify-content: space-between;
+        gap: 90px;
+        @include breakpoint(large) {
+            gap: 60px;
+        }
+        @include breakpoint(medium) {
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        @include breakpoint(small) {
+            grid-template-columns: 1fr;
+            gap: 80px;
+        }
+    }
+    &__column {
+        height: auto;
+    }
+
+    &__map {
+        width: 100%;
+        height: 600px;
+        @include breakpoint(small) {
+            height: 400px;
+        }
+        @media screen and (max-width: 560px) {
+            height: 280px;
+        }
+    }
+}

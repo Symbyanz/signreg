@@ -1,0 +1,262 @@
+@import "/app/mixins.scss";
+.footer {
+    &__content {
+        border-top: 1px solid #eee;
+    }
+
+    &__main-content {
+        padding: 100px 0;
+        display: grid;
+        grid-template-columns: repeat(24, 1fr);
+        gap: 12px 12px;
+        @include breakpoint(medium) {
+            padding: 50px 0;
+        }
+        @media (max-width: 968px) {
+            gap: 50px 12px;
+        }
+        @include breakpoint(small) {
+            gap: 20px 12px;
+            padding: 30px 0;
+        }
+    }
+}
+
+.u-footer-content {
+    &__sidebar {
+        height: 100%;
+        display: grid;
+        gap: 12px;
+        grid-column: auto/span 7;
+        @include breakpoint(large) {
+            grid-column: auto/span 8;
+        }
+        @media (max-width: 968px) {
+            grid-column: auto/span 24;
+        }
+    }
+
+    &__nav {
+        display: grid;
+        gap: 12px;
+        grid-column: auto/span 15;
+        @include breakpoint(large) {
+            grid-column: auto/span 16;
+        }
+        @media (max-width: 968px) {
+            grid-column: auto/span 24;
+            // grid-row: 1/-1;
+        }
+    }
+}
+
+// FooterSidebar.tsx
+.u-footer-sidebar {
+    &__group {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__logo {
+        width: 216px;
+        height: 50px;
+        margin-bottom: 30px;
+        @include breakpoint(large) {
+            width: 200px;
+            height: 47px;
+            margin-bottom: 20px;
+        }
+        @include breakpoint(medium) {
+            width: 160px;
+            height: 37px;
+        }
+        @include breakpoint(small) {
+            width: 140px;
+            height: 32px;
+            margin-bottom: 10px;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__tagline {
+        line-height: 1.5 !important;
+        flex: 1;
+        margin-bottom: 30px;
+        max-width: 360px;
+        @media (max-width: 968px) {
+            max-width: 100%;
+        }
+        @include breakpoint(medium) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.u-footer-socialnets {
+    &__title {
+        margin-bottom: 20px;
+        @include breakpoint(medium) {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+// FooterNav.tsx
+.footer-nav {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    gap: 12px 12px;
+    @include breakpoint(small) {
+        gap: 0 12px;
+    }
+
+    &__group {
+        grid-column: auto/span 8;
+        @include breakpoint(small) {
+            grid-column: auto/span 24;
+        }
+    }
+
+    &__title {
+        color: var(--color-black);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.5;
+        display: block;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include breakpoint(medium) {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        @include breakpoint(small) {
+            font-size: 17px;
+            margin: 0;
+            padding: 15px 0;
+            cursor: pointer;
+            transition: color var(--transition-one);
+        }
+        &_active {
+            .footer-nav__arrow {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__list {
+        list-style: none;
+        overflow: hidden;
+        transition: var(--transition-all);
+        @media screen and (min-width: 769px) {
+            height: auto !important;
+        }
+    }
+
+    &__item {
+        margin-bottom: 20px;
+        @include breakpoint(medium) {
+            margin-bottom: 15px;
+        }
+        @include breakpoint(small) {
+            margin-bottom: 10px;
+        }
+        &:nth-last-child(1) {
+            margin-bottom: 0;
+            @include breakpoint(small) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    &__link {
+        color: var(--color-grey);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.35;
+        transition: color var(--transition-one);
+        @include breakpoint(large) {
+            font-size: 17px;
+        }
+        @include breakpoint(medium) {
+            font-size: 16px;
+        }
+        &:hover {
+            cursor: pointer;
+            color: var(--color-blue);
+        }
+        &_icon {
+            display: flex;
+            align-items: center;
+            &:hover {
+                svg {
+                    cursor: pointer;
+                    fill: var(--color-blue);
+                }
+            }
+            svg {
+                transition: fill var(--transition-one);
+                width: 18px;
+                height: 18px;
+                fill: var(--color-grey);
+                margin-right: 10px;
+            }
+        }
+    }
+    &__arrow {
+        display: none;
+        width: 16px;
+        height: 16px;
+        opacity: 1;
+        transition: transform var(--transition-one);
+        svg {
+            fill: #2b2f33;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: rotate(90deg);
+        }
+        @include breakpoint(small) {
+            display: inline-block;
+        }
+    }
+}
+
+// FooterCopyright
+.footer-copyright {
+    border-top: 1px solid #eee;
+    padding: 30px 0;
+    @include breakpoint(medium) {
+        padding: 24px 0;
+    }
+    &__content {
+        max-width: 720px;
+        @include breakpoint(medium){
+            max-width: 640px;
+        }
+        @include breakpoint(small){
+            max-width: 100%;
+        }
+    }
+
+    &__text {
+        color: var(--color-grey);
+        line-height: 1.35 !important;
+        opacity: 0.8;
+        margin-bottom: 5px;
+        @include breakpoint(small) {
+            font-size: 14px;
+        }
+        &:nth-last-child(1) {
+            margin-bottom: 0;
+        }
+    }
+}

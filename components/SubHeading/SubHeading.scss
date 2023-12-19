@@ -1,0 +1,23 @@
+@import "/app/mixins.scss";
+.subtitle {
+    color: var(--color-grey);
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    @include breakpoint(large) {
+        font-size: 20px;
+    }
+
+    @include breakpoint(medium) {
+        font-size: 18px;
+    }
+
+    @include breakpoint(small) {
+        font-size: 17px;
+    }
+    &_large{
+        font-weight: 500;
+        color: var(--color-black);
+    }
+}

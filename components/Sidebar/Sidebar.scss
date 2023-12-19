@@ -1,0 +1,61 @@
+@import "/app/mixins.scss";
+.sidebar {
+    @include border-radius;
+    @include shadow;
+    padding: 30px 40px;
+    position: sticky;
+    top: 40px;
+    @include breakpoint(medium) {
+        padding: 30px;
+        top: 30px;
+    }
+    @media screen and (max-width: 880px) {
+        padding: 20px;
+        top: 20px;
+    }
+    @include breakpoint(small) {
+        position: relative;
+        top: auto;
+    }
+    &__title {
+        margin-bottom: 20px;
+        @include breakpoint(small){
+            margin-bottom: 12px;
+        }
+    }
+}
+
+.sidebar-menu-list {
+    list-style: none;
+    &__item {
+        margin-bottom: 20px;
+        @include breakpoint(medium) {
+            margin-bottom: 18px;
+        }
+        @media screen and (max-width: 880px) {
+            margin-bottom: 15px;
+        }
+        @include breakpoint(small) {
+            margin-bottom: 12px;
+        }
+        &:nth-last-child(1) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        font-size: 18px;
+        line-height: 1.35;
+        transition: color var(--transition-one);
+        &:hover {
+            cursor: pointer;
+            color: var(--color-blue);
+        }
+        @include breakpoint(large) {
+            font-size: 17px;
+        }
+        @include breakpoint(medium) {
+            font-size: 16px;
+        }
+    }
+}

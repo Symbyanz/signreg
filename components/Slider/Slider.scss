@@ -1,0 +1,218 @@
+@import "swiper/css";
+@import "/app/mixins.scss";
+
+.navigation {
+    margin-top: 20px;
+    @include breakpoint(small) {
+        margin-top: 12px;
+    }
+    display: flex;
+    &__prev-arrow,
+    &__next-arrow {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color var(--transition-one);
+        @include breakpoint(large) {
+            width: 54px;
+            height: 54px;
+        }
+        @include breakpoint(medium) {
+            width: 52px;
+            height: 52px;
+        }
+        @include breakpoint(small) {
+            width: 48px;
+            height: 48px;
+            border-radius: 4px;
+        }
+        svg {
+            width: 30px;
+            height: 30px;
+            @include breakpoint(large) {
+                width: 28px;
+                height: 28px;
+            }
+            @include breakpoint(medium) {
+                width: 26px;
+                height: 26px;
+            }
+            @include breakpoint(small) {
+                width: 24px;
+                height: 24px;
+            }
+        }
+        &:hover {
+            background-color: var(--color-light-grey);
+        }
+    }
+    &__prev-arrow {
+        margin-right: 10px;
+        @include breakpoint(medium) {
+            margin-right: 8px;
+        }
+        @include breakpoint(small) {
+            margin-right: 5px;
+        }
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.slider {
+    position: relative;
+    margin: -10px;
+    padding: 10px;
+    @include breakpoint(small) {
+        display: block;
+        width: 100vw;
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.slider_services {
+    .swiper-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        @media screen and (max-width: 1480px) {
+            gap: 20px;
+        }
+        @media screen and (max-width: 1120px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        @media screen and (max-width: 880px) {
+            gap: 20px;
+        }
+        @include breakpoint(small) {
+            display: flex;
+            gap: 0;
+        }
+    }
+    .swiper-slide {
+        width: auto;
+    }
+    .navigation {
+        display: none;
+        @include breakpoint(small) {
+            display: flex;
+        }
+    }
+}
+
+.slider_subservices {
+    .swiper-wrapper {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        @media screen and (max-width: 1480px) {
+            gap: 20px;
+        }
+        @media screen and (max-width: 1120px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        @media screen and (max-width: 880px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @include breakpoint(small) {
+            display: flex;
+            gap: 0;
+        }
+    }
+    .swiper-slide {
+        @include breakpoint(small){
+            margin-right: 12px;
+        }
+    }
+    .card__title {
+        font-size: 20px;
+        @include breakpoint(large) {
+            font-size: 1.15vw;
+        }
+        @media screen and (max-width: 1120px) {
+            font-size: 1.5vw;
+        }
+        @media screen and (max-width: 880px) {
+            font-size: 2vw;
+        }
+        @include breakpoint(small) {
+            font-size: 16px;
+        }
+    }
+    .swiper-slide {
+        width: auto;
+    }
+    .navigation {
+        display: none;
+        @include breakpoint(small) {
+            display: flex;
+        }
+    }
+}
+
+.slider_projects {
+    .swiper-wrapper {
+        display: flex;
+        align-items: stretch;
+        gap: 0;
+    }
+    .swiper-slide {
+        width: calc((100% - 60px) / 3);
+        height: auto;
+        margin-right: 30px;
+        @media screen and (max-width: 1480px) {
+            width: calc((100% - 40px) / 3);
+            margin-right: 20px;
+        }
+        @media screen and (max-width: 1120px) {
+            width: calc((100% - 30px) / 2);
+            margin-right: 30px;
+        }
+        @media screen and (max-width: 880px) {
+            width: calc((100% - 20px) / 2);
+            margin-right: 20px;
+        }
+        @include breakpoint(small) {
+            width: auto;
+            margin-right: 12px;
+        }
+    }
+}
+
+.slider_reviews {
+    .swiper-wrapper {
+        display: flex;
+        align-items: stretch;
+        gap: 0;
+    }
+    .swiper-slide {
+        width: calc((100% - 30px) / 2);
+        height: auto;
+        margin-right: 30px;
+        @media screen and (max-width: 1480px) {
+            width: calc((100% - 20px) / 2);
+            margin-right: 20px;
+        }
+        @media screen and (max-width: 1120px) {
+            width: calc((100% - 30px) / 2);
+            margin-right: 30px;
+        }
+        @media screen and (max-width: 880px) {
+            width: calc((100% - 20px) / 2);
+            margin-right: 20px;
+        }
+        @include breakpoint(small) {
+            width: auto;
+            margin-right: 12px;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+@import "/app/mixins.scss";
+.reviews {
+    &__content {
+        position: relative;
+    }
+
+    &__title {
+        padding-right: 140px;
+        margin-bottom: 40px;
+        @include breakpoint(medium) {
+            margin-bottom: 30px;
+            padding-right: 100px;
+        }
+        @include breakpoint(small) {
+            margin-bottom: 20px;
+            padding-right: 0;
+        }
+    }
+
+    .navigation {
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        right: 30px;
+        margin: 0;
+        height: 60px;
+        align-items: center;
+        @include breakpoint(medium) {
+            top: -4px;
+        }
+        @media screen and (max-width: 1000px) {
+            top: -10px;
+        }
+        @include breakpoint(small) {
+            position: relative;
+            top: auto;
+            right: auto;
+            left: auto;
+            margin-top: 12px;
+        }
+    }
+}

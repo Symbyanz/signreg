@@ -1,0 +1,18 @@
+@import "/app/mixins.scss";
+.map {
+    position: relative;
+    overflow: hidden;
+    @include border-radius;
+    @include shadow;
+    transition: box-shadow var(--transition-one);
+    &:hover {
+        @include shadow(hover);
+    }
+    &__content {
+        width: 100%;
+        height: 100%;
+        // background: #fafafa;
+        background-image: url(./bg.png);
+        background-size: 16px 16px;
+    }
+}

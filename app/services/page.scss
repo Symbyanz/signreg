@@ -1,0 +1,19 @@
+@import "/app/mixins.scss";
+.services {
+    &__breadcrumbs {
+        margin-bottom: 10px;
+        @include breakpoint(medium) {
+            margin-bottom: 5px;
+        }
+        @include breakpoint(small) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 30px;
+        @include breakpoint(medium) {
+            margin-bottom: 20px;
+        }
+    }
+}

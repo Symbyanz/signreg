@@ -1,0 +1,55 @@
+@import "/app/mixins.scss";
+.author {
+    display: flex;
+    align-items: stretch;
+    &__image {
+        position: relative;
+        margin-right: 20px;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        overflow: hidden;
+        @include breakpoint(large) {
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+        }
+        @include breakpoint(medium) {
+            width: 56px;
+            height: 56px;
+            margin-right: 10px;
+        }
+        @include breakpoint(small) {
+            width: 50px;
+            height: 50px;
+            margin-right: 8px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__content{
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__title {
+        line-height: 1.33;
+        @include ellipsis;
+        -webkit-line-clamp: 1;
+        margin-bottom: 5px;
+        @include breakpoint(large) {
+            margin-bottom: 3px;
+        }
+    }
+    &__subtitle{
+        line-height: 1.33;
+        @include ellipsis;
+        -webkit-line-clamp: 1;
+    }
+}

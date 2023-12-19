@@ -1,0 +1,43 @@
+@mixin breakpoint($point) {
+    // 480px
+    @if $point == small {
+        @media screen and (max-width: 768px) {
+            @content;
+        }
+    }
+    // 1000px
+    @elseif $point == medium {
+        @media screen and (max-width: 1240px) {
+            @content;
+        }
+    }
+    @elseif $point == large {
+        @media screen and (max-width: 1680px) {
+            @content;
+        }
+    }
+}
+
+@mixin shadow($type: standart) {
+    @if $type == bottom {
+        border-bottom: 1px solid rgba(221, 221, 221, 0.5);
+        box-shadow: -1px 2px 10px 0px rgba(0, 0, 0, 0.05);
+    }
+    @elseif $type == hover {
+        box-shadow: -1px 2px 10px 0px rgba(0, 0, 0, 0.15);
+    } @else {
+        border: 1px solid rgba(221, 221, 221, 0.5);
+        box-shadow: -1px 2px 10px 0px rgba(0, 0, 0, 0.05);
+    }
+}
+
+@mixin border-radius {
+    border-radius: 20px;
+}
+
+@mixin ellipsis {
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

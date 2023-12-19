@@ -1,0 +1,105 @@
+@import "/app/mixins.scss";
+
+.tab-filler-packet {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__content {
+        flex: 1 1 60%;
+    }
+
+    &__title {
+        margin-bottom: 30px;
+        @include breakpoint(medium) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__heading-box {
+        margin-bottom: 30px;
+        @include breakpoint(medium) {
+            margin-bottom: 20px;
+        }
+        .title {
+            margin-bottom: 10px;
+            @include breakpoint(medium) {
+                margin-bottom: 5px;
+            }
+            @include breakpoint(small) {
+                margin: 0;
+            }
+        }
+    }
+    &__button-with-text {
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+        @include breakpoint(medium) {
+            margin-top: 20px;
+        }
+        @include breakpoint(small){
+            flex-wrap: wrap;
+        }
+        span {
+            display: block;
+            margin-left: 30px;
+            color: var(--color-blue);
+            font-style: normal;
+            font-weight: 500;
+            font-size: 21px;
+            line-height: 1.75;
+            @include breakpoint(large) {
+                font-size: 20px;
+            }
+            @media screen and (max-width: 1480px) {
+                margin-left: 20px;
+            }
+            @include breakpoint(medium) {
+                font-size: 18px;
+            }
+            @include breakpoint(small) {
+                font-size: 17px;
+                margin-left: 15px;
+                padding: 10px 0;
+            }
+        }
+    }
+
+    &__image {
+        position: relative;
+        flex: 1 1 40%;
+        height: 360px;
+        margin-left: 60px;
+        @include breakpoint(medium) {
+            margin-left: 40px;
+        }
+        @media screen and (max-width: 980px) {
+            margin-left: 20px;
+        }
+        @include breakpoint(small) {
+            height: 240px;
+            flex: 1 1 100%;
+            margin-left: 0;
+            margin-bottom: 20px;
+        }
+        @media screen and (max-width: 480px) {
+            height: 200px;
+        }
+        img {
+            object-fit: contain;
+            object-position: center;
+        }
+        &_desktop {
+            display: block;
+            @include breakpoint(small) {
+                display: none;
+            }
+        }
+        &_mobile {
+            display: none;
+            @include breakpoint(small) {
+                display: block;
+            }
+        }
+    }
+}

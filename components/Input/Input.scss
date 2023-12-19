@@ -1,0 +1,43 @@
+@import "/app/mixins.scss";
+
+.input {
+    border-radius: 30px;
+    width: 100%;
+    padding: 20px 30px;
+    font-size: 18px;
+    line-height: 1;
+    color: var(--color-black);
+    transition: var(--transition-all);
+    outline-color: var(--color-blue);
+    background: var(--color-white);
+    font-family: var(--font-inter);
+    @include shadow;
+    @include breakpoint(large) {
+        font-size: 17px;
+    }
+    @include breakpoint(medium) {
+        font-size: 16px;
+        padding: 15px 30px;
+    }
+    @include breakpoint(small) {
+        padding: 15px 20px;
+    }
+    &_error {
+        border: 1px solid red;
+        margin-bottom: 10px;
+        @include breakpoint(small) {
+            margin-bottom: 20px;
+        }
+    }
+    &:focus {
+        // outline-style: solid;
+        // outline-width: 2px;
+    }
+    &:hover,
+    &:focus {
+        @include shadow(hover);
+    }
+    &::placeholder {
+        color: rgba(109, 125, 139, 0.5);
+    }
+}

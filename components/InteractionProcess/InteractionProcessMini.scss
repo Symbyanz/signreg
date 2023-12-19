@@ -1,0 +1,54 @@
+@import "/app/mixins.scss";
+.interactoin-process_mini {
+    .interactoin-process__list {
+        grid-template-columns: repeat(4, 1fr);
+        @media screen and (max-width: 1120px) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        @media screen and (max-width: 880px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px 30px;
+        }
+        @include breakpoint(small){
+            gap: 20px 60px;
+        }
+        @media screen and (max-width: 600px) {
+            gap: 10px 20px;
+        }
+    }
+
+    .interactoin-process-item {
+        .interactoin-process-item__image::after {
+            width: calc(15% + 30px);
+            @media screen and (max-width: 880px) {
+                width: calc(13% + 30px);
+            }
+            @include breakpoint(small){
+                width: calc(13% + 60px);
+                left: calc(100% - 20px);
+            }
+            @media screen and (max-width: 600px) {
+                width: calc(13% + 20px);
+                left: calc(100% - 10px);
+            }
+        }
+        &:nth-child(even) {
+            .interactoin-process-item__image::after {
+                @media screen and (max-width: 880px) {
+                    display: none;
+                }
+            }
+        }
+        &:nth-child(3) {
+            .interactoin-process-item__image::after {
+                @media screen and (max-width: 1120px) {
+                    display: none;
+                }
+                @media screen and (max-width: 880px) {
+                    display: block;
+                }
+            }
+        }
+    }
+}

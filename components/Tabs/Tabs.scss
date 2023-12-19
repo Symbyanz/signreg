@@ -1,0 +1,90 @@
+@import "/app/mixins.scss";
+
+.tabs {
+    width: 100%;
+    padding: 40px 60px 60px;
+    @include shadow;
+    @include border-radius;
+    overflow: hidden;
+    @media screen and (max-width: 1480px) {
+        padding: 20px 40px 40px;
+    }
+    @include breakpoint(medium) {
+        padding: 20px 30px 30px;
+    }
+
+    @include breakpoint(small) {
+        padding: 20px;
+    }
+    &__tab-list {
+        position: relative;
+        list-style: none;
+        display: flex;
+        border-bottom: 1px solid rgba(224, 224, 224, 1);
+        width: calc(100% + 30px);
+        margin-left: -15px;
+        margin-right: -15px;
+        margin-bottom: 40px;
+        @media screen and (max-width: 1480px) {
+            margin-bottom: 30px;
+        }
+        @include breakpoint(medium) {
+            width: calc(100% + 24px);
+            margin-left: -12px;
+            margin-right: -12px;
+        }
+        @include breakpoint(small) {
+            width: calc(100% + 20px);
+            margin: -10px 0 12px -10px;
+            overflow-x: auto;
+        }
+        @media screen and (max-width: 480px) {
+            width: calc(100% + 16px);
+            margin: -8px 0 12px -8px;
+        }
+    }
+    &__indicator {
+        position: absolute;
+        width: 0;
+        height: 2px;
+        left: 0;
+        bottom: 0;
+        background-color: var(--color-blue);
+        transition: var(--transition-all);
+    }
+    &__tab-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        color: rgba(78, 90, 100, 0.5);
+        line-height: 1.5;
+        letter-spacing: -0.1px;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 1.35;
+        padding: 12px 15px;
+        cursor: pointer;
+        transition: color var(--transition-one);
+        @include breakpoint(large) {
+            font-size: 16px;
+        }
+        @include breakpoint(medium) {
+            font-size: 15px;
+            padding: 10px 12px;
+        }
+        @include breakpoint(small) {
+            font-size: 14px;
+            padding: 8px 10px;
+        }
+        @media screen and (max-width: 480px) {
+            padding: 8px 8px;
+        }
+        &_active {
+            color: var(--color-blue);
+        }
+    }
+    &__tab-panel {
+    }
+}

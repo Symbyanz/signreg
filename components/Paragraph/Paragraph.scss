@@ -1,0 +1,40 @@
+@import "/app/mixins.scss";
+.paragraph {
+    color: var(--color-grey);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 1.75;
+    @include breakpoint(large) {
+        font-size: 20px;
+    }
+    @include breakpoint(medium) {
+        font-size: 18px;
+    }
+    @include breakpoint(small) {
+        font-size: 17px;
+    }
+
+    &_small {
+        font-size: 18px;
+        line-height: 1.35;
+        @include breakpoint(large) {
+            font-size: 17px;
+        }
+        @include breakpoint(medium) {
+            font-size: 16px;
+        }
+        @include breakpoint(small) {
+            // font-size: 15px;
+        }
+    }
+    &_super-small {
+        font-size: 16px;
+        @include breakpoint(large) {
+            font-size: 15px;
+        }
+        @include breakpoint(small) {
+            // font-size: 14px;
+        }
+    }
+}

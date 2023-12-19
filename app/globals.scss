@@ -1,0 +1,94 @@
+@import "./mixins.scss";
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  // --font-inter
+  // --font-firsNeue
+  --color-black: #0c1c4a;
+  --color-blue: #2626ff;
+  --color-dark-blue: #0000d8;
+  --color-sky-blue: #7d97f4;
+  --color-light-blue: rgba(220, 229, 254, 0.3);
+  --color-dark-grenn: #0f5c2e;
+  --color-green: rgb(26, 162, 81);
+  --color-light-green: rgb(233, 251, 240);
+  --color-grey: #4e5a64; //#6d7d8b - предыдущий цвет
+  --color-light-grey: #f2f4f7;
+  --color-white: #fff;
+  --transition-all: all ease-in-out 0.2s;
+  --transition-one: ease-in-out 0.2s;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-inter);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: inherit;
+  font-family: var(--font-inter);
+  cursor: pointer;
+}
+
+// layout
+main {
+  flex: auto;
+}
+
+.container {
+  max-width: 1700px;
+  padding: 0 30px;
+  margin: 0 auto;
+  @include breakpoint(medium) {
+    padding: 0 20px;
+  }
+}
+
+.section {
+  padding: 80px 0;
+  @include breakpoint(medium) {
+    padding: 60px 0;
+  }
+  @include breakpoint(small) {
+    padding: 40px 0;
+  }
+}
+
+.main {
+  @include breakpoint(small) {
+    padding-top: 56px;
+  }
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

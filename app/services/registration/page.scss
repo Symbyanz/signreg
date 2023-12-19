@@ -1,0 +1,65 @@
+@import "/app/mixins.scss";
+.top-section {
+    padding-bottom: 30px;
+    @include breakpoint(medium) {
+        padding-bottom: 20px;
+    }
+
+    &__breadcrumbs {
+        margin-bottom: 10px;
+        @include breakpoint(medium) {
+            margin-bottom: 5px;
+        }
+        @include breakpoint(small) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.body-section {
+    padding-top: 0;
+    @include breakpoint(small){
+        padding-bottom: 0;
+    }
+    &__content {
+        display: grid;
+        gap: 60px;
+        grid-template-columns: 1fr 420px;
+        @include breakpoint(large) {
+            grid-template-columns: 1fr 400px;
+            gap: 40px;
+        }
+        @media screen and (max-width: 1480px) {
+            gap: 30px;
+        }
+        @include breakpoint(medium) {
+            grid-template-columns: 1fr 340px;
+        }
+        @media screen and (max-width: 880px) {
+            grid-template-columns: 1fr 280px;
+            gap: 20px;
+        }
+        @include breakpoint(small) {
+            display: block;
+        }
+    }
+
+    &__column_left {
+        @include breakpoint(small) {
+            padding-bottom: 40px;
+        }
+    }
+    &__text {
+        display: grid;
+        gap: 60px;
+        padding-top: 60px;
+        @include breakpoint(medium){
+            gap: 40px;
+            padding-top: 40px;
+        }
+        @include breakpoint(small){
+            gap: 30px;
+            padding-top: 30px;
+        }
+    }
+}

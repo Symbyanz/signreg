@@ -1,0 +1,136 @@
+@import "/app/mixins.scss";
+.hero {
+    padding: 80px 0;
+    @include breakpoint(medium) {
+        padding: 60px 0;
+    }
+    @include breakpoint(small) {
+        padding: 40px 0;
+    }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        @include breakpoint(small) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__text {
+        flex: 0 0 50%;
+        padding-right: 30px;
+        @include breakpoint(medium) {
+            padding-right: 20px;
+        }
+        @media screen and (max-width: 1000px) {
+            flex: 0 0 440px;
+        }
+
+        @include breakpoint(small) {
+            flex: 1 1 100%;
+            padding: 0;
+        }
+    }
+
+    &__image {
+        position: relative;
+        flex: 1 1 50%;
+        @include breakpoint(small) {
+            flex: 100%;
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+        @media screen and (max-width: 600px) {
+            height: 280px;
+        }
+        @media screen and (max-width: 480px) {
+            height: 240px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__breadcrumbs {
+        margin-bottom: 10px;
+        @include breakpoint(medium) {
+            margin-bottom: 5px;
+        }
+        @include breakpoint(small) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 30px;
+        @include breakpoint(medium) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__description {
+        .paragraph {
+            margin-bottom: 30px;
+            @include breakpoint(medium) {
+                margin-bottom: 20px;
+            }
+            &:nth-last-child(1) {
+                margin: 0;
+            }
+        }
+    }
+    &__button {
+        margin-top: 80px;
+        @include breakpoint(medium) {
+            margin-top: 40px;
+        }
+        @include breakpoint(small) {
+            margin-top: 30px;
+        }
+    }
+}
+
+.hero__image_mobile {
+    display: none;
+    @include breakpoint(small) {
+        display: block;
+    }
+}
+
+.hero__image_desktop {
+    display: block;
+    @include breakpoint(small) {
+        display: none;
+    }
+}
+
+.hero__content_relaction {
+    flex-direction: row-reverse;
+    .hero__text {
+        padding-left: 30px;
+        padding-right: 0;
+        @include breakpoint(medium) {
+            padding-left: 20px;
+        }
+        @include breakpoint(small) {
+            padding: 0;
+        }
+    }
+}
+
+.hero_special {
+    .hero__title {
+        max-width: 734px;
+        @include breakpoint(large) {
+            max-width: 100%;
+        }
+    }
+    .hero__description {
+        max-width: 655px;
+        @include breakpoint(large) {
+            max-width: 640px;
+        }
+    }
+}

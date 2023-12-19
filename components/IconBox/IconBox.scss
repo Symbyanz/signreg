@@ -1,0 +1,70 @@
+@import "/app/mixins.scss";
+.icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include breakpoint(small) {
+        padding: 20px;
+        align-items: flex-start;
+        @include shadow();
+        @include border-radius();
+        transition: var(--transition-all);
+        margin-bottom: 12px;
+        &:hover {
+            @include shadow(hover);
+        }
+    }
+    &__image {
+        position: relative;
+        height: 100px;
+        width: 100px;
+        margin-bottom: 30px;
+        transition: transform var(--transition-one);
+        &:hover {
+            transform: translateY(-3%);
+        }
+        @include breakpoint(large) {
+            width: 96px;
+            gap: 96px;
+        }
+        @include breakpoint(medium) {
+            width: 72px;
+            height: 72px;
+            margin-bottom: 20px;
+        }
+        @include breakpoint(small) {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 20px;
+            &:hover {
+                transform: none;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            width: 48px;
+            height: 48px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        @include breakpoint(large) {
+            margin-bottom: 15px;
+        }
+        @include breakpoint(medium) {
+            margin-bottom: 10px;
+        }
+        @include breakpoint(small) {
+            margin-bottom: 8px;
+            text-align: left;
+        }
+    }
+
+    &__description {
+        text-align: center;
+        @include breakpoint(small) {
+            text-align: left;
+            line-height: 1.33;
+        }
+    }
+}

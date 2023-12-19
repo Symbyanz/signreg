@@ -1,0 +1,49 @@
+@import "/app/mixins.scss";
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    &__label {
+        flex: 1;
+        line-height: 1.33;
+        padding-left: 20px;
+        @include breakpoint(medium){
+            padding-left: 10px;
+        }
+        @include breakpoint(small){
+            padding-left: 8px;
+        }
+    }
+    input[type="checkbox"] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 24px;
+        height: 24px;
+        border-radius: 0.15em;
+        margin-right: 0.5em;
+        border-radius: 5px;
+        @include shadow;
+        outline: none;
+        cursor: pointer;
+        @include breakpoint(small) {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &_error {
+        input[type="checkbox"] {
+            border: 1px solid red;
+        }
+    }
+}
+.checkbox input[type="checkbox"].checked {
+    position: relative;
+    background-image: url("./done.svg");
+    background-size: 20px 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #2626ff;
+    @include breakpoint(small) {
+        background-size: 18px 18px;
+    }
+}

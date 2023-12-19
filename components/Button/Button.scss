@@ -1,0 +1,37 @@
+@import "../../app/mixins.scss";
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 30px;
+  height: 46px;
+  font-size: 16px;
+  padding: 15px 30px;
+  @include breakpoint(medium) {
+    font-size: 15px;
+    height: 42px;
+    padding: 12px 20px;
+  }
+}
+
+.button_primary {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  transition: var(--transition-all);
+  &:hover {
+    background-color: var(--color-dark-blue);
+  }
+}
+
+.button_large {
+  height: 56px;
+  font-size: 17px;
+  padding: 18px 40px;
+  @include breakpoint(medium) {
+    height: 46px;
+    font-size: 16px;
+    padding: 15px 30px;
+  }
+}

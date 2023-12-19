@@ -1,0 +1,51 @@
+@import "/app/mixins.scss";
+.list {
+    background: var(--color-light-blue);
+    border-radius: 20px;
+
+    &__item {
+        color: var(--color-grey);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 21px;
+        line-height: 1.75;
+        @include breakpoint(large) {
+            font-size: 20px;
+        }
+        @include breakpoint(medium) {
+            font-size: 18px;
+        }
+        @include breakpoint(small) {
+            font-size: 17px;
+        }
+    }
+    &_disc {
+        list-style: disc;
+    }
+    &_none {
+        padding: 20px;
+        list-style: none;
+        @include breakpoint(small) {
+            padding: 10px;
+        }
+    }
+    &_decimal {
+        list-style: decimal;
+    }
+}
+
+.list_medium {
+    padding: 30px 55px;
+    @include breakpoint(medium) {
+        padding: 20px 20px 20px 45px;
+    }
+    @include breakpoint(small) {
+        padding: 10px 10px 10px 35px;
+    }
+}
+.list_small {
+    padding: 20px 20px 20px 45px;
+    @include breakpoint(small) {
+        padding: 10px 10px 10px 35px;
+    }
+}
