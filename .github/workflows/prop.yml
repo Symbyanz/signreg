@@ -19,10 +19,4 @@ jobs:
           port: 22
           script:
             export NVM_DIR=~/.nvm
-            bash source ~/.nvm/nvm.sh
-            cd ~/signreg
-            git pull origin main
-            yarn install
-            yarn build
-            kill -9 `lsof -t -i:80`
-            yarn start -p 80 & bg
+            
