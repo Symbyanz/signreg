@@ -18,7 +18,7 @@ export default function HomePage() {
         href='#'
         imageUrl='/images/home-hero.svg'
       />
-      <Partners title='Нам доверяют более 700 организаций:' />
+      <Partners title='Нам доверяют более 700 компаний:' />
       <Services />
       <Hero
         title='Создаем долгосрочные партнерства для вашего успеха'
