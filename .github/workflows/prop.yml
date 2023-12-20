@@ -26,3 +26,5 @@ jobs:
             yarn build
             kill -9 `lsof -t -i:80`
             yarn start -p 80 & bg
+      - name: Closed
+        run: exit_with_success
