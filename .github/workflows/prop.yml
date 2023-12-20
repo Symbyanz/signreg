@@ -19,7 +19,7 @@ jobs:
           port: 22
           script:
             export NVM_DIR=~/.nvm
-            #!/bin/bash sourсe ~/.nvm/nvm.sh
+            bash ~/.nvm/nvm.sh
             cd ~/signreg
             git pull origin main
             yarn install
