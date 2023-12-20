@@ -18,8 +18,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script:
-            sudo -s
-            source /etc/bash.bashrc
             export NVM_DIR=~/.nvm
             sourсe ~/.nvm/nvm.sh
             cd ~/signreg
