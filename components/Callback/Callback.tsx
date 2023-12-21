@@ -1,5 +1,4 @@
 import Button from '../Button/Button'
-import Paragraph from '../Paragraph/Paragraph'
 import SubHeading from '../SubHeading/SubHeading'
 import './Callback.scss'
 
@@ -25,7 +24,7 @@ const Callback = ({ className }: { className?: string }) => {
             <div className="callback__content">
                 <div className="callback__box">
                     <div className="callback__column callback__column_button">
-                        <Button className='callback__button' size='large'>Консультация</Button>
+                        <Button className='callback__button button_callback' size='large'>Консультация</Button>
                     </div>
                     <div className="callback__column callback__column_info">
                         <SubHeading className='callback__description' size='large'>Звоните по телефону горячей линии:</SubHeading>

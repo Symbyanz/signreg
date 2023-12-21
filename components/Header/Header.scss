@@ -27,6 +27,13 @@
         justify-content: space-between;
         align-items: stretch;
     }
+    &__modal {
+        display: flex;
+        align-items: center;
+        @include breakpoint(small) {
+            display: none;
+        }
+    }
 }
 
 // HeaderLogo.tsx
@@ -329,14 +336,5 @@
         &:hover {
             color: var(--color-blue);
         }
-    }
-}
-
-// HeaderModal.tsx
-.header-modal {
-    display: flex;
-    align-items: center;
-    @include breakpoint(small) {
-        display: none;
     }
 }

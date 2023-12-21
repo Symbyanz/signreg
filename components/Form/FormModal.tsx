@@ -2,13 +2,11 @@
 import './Form.scss'
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import Input from '../Input/Input'
-import Textarea from '../Textarea/Textarea'
 import Button from '../Button/Button'
 import Paragraph from '../Paragraph/Paragraph'
 import SuccessIcon from './success.svg'
 import { useForm } from 'react-hook-form'
-import Checkbox from '../Checkbox/Checkbox'
-import SubHeading from '../SubHeading/SubHeading'
+import HeadingBox from '../HeadingBox/HeadingBox'
 
 interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     formId: string
@@ -23,7 +21,7 @@ interface FormData {
 
 
 
-const Form = ({ className, formId, ...props }: Props) => {
+const FormModal = ({ className, formId, ...props }: Props) => {
     const classes = className ? 'form ' + className : 'form'
     const { register, handleSubmit, formState: { errors } } = useForm<FormData>()
     const onSubmit = async (data: FormData) => {
@@ -51,7 +49,7 @@ const Form = ({ className, formId, ...props }: Props) => {
     return (
         <form className={classes} onSubmit={handleSubmit(onSubmit)}>
             <div className='form__field'>
-                <SubHeading className='form__subtitle'>Эффективное разрешение юридических вопросов через форму обратной связи</SubHeading>
+                <HeadingBox className='form__heading-box' title='Обратная связь' subtitle='Оставьте заявку и наш менеджер свяжется с вами в ближайшее время' type='align-left'/>
             </div>
             <div className='form__field'>
                 <Input
@@ -78,28 +76,10 @@ const Form = ({ className, formId, ...props }: Props) => {
                 {errors.phone && <span className='form__field-error' role='alert'>{errors.phone.message}</span>}
             </div>
             <div className='form__field'>
-                <Textarea
-                    className={errors.content && 'textarea_error'}
-                    {...register('content', {
-                        maxLength: { value: 120, message: 'Сообщение не может быть длиннее 120 символов' },
-                        required: 'Обязательное поле',
-                    })}
-                    placeholder='Ваше сообщение'
-                    aria-invalid={errors.content ? 'true' : 'false'} />
-                {errors.content && <span className='form__field-error' role='alert'>{errors.content.message}</span>}
+                <Paragraph className='checkbox__label' size='super-small' style={{padding: 0}}>Оставляя сообщение, вы соглашаетесь на обработку персональных данных.</Paragraph>
             </div>
             <div className='form__field'>
-                <Checkbox
-                    className={errors.agreement && 'checkbox_error'}
-                    {...register('agreement', {
-                        required: true
-                    })}
-                    label='Оставляя сообщение, вы соглашаетесь на обработку персональных данных.'
-                    checked={true}
-                    aria-invalid={errors.agreement ? 'true' : 'false'} />
-            </div>
-            <div className='form__field'>
-                <Button className='form__button' size='large'>Отправить</Button>
+                <Button className='form__button' size='large'>Оставить заявку</Button>
             </div>
             <div className='form__success success'>
                 <div className='success__image'>
@@ -112,4 +92,4 @@ const Form = ({ className, formId, ...props }: Props) => {
     )
 }
 
-export default Form
+export default FormModal

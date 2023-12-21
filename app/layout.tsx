@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import FirsNeue from 'next/font/local'
 import Footer from '@/components/Footer/Footer'
+import Modal from '@/components/Modal/Modal'
 
 
 
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body>
         <Header />
         <main className='main'>{children}</main>
+        <Modal />
         <Footer />
       </body>
     </html>

@@ -50,7 +50,7 @@ export default function Page() {
                         </li>
                     </ul>
                     <div className='button-with-text'>
-                        <Button className='button-with-text__button' size='large'>Заказать услугу</Button>
+                        <Button className='button-with-text__button button_callback' size='large'>Заказать услугу</Button>
                         <span>От 30 000 ₽</span>
                     </div>
                 </CardOffer>
@@ -73,7 +73,7 @@ export default function Page() {
                         </li>
                     </ul>
                     <div className='button-with-text'>
-                        <Button className='button-with-text__button' size='large'>Заказать услугу</Button>
+                        <Button className='button-with-text__button button_callback' size='large'>Заказать услугу</Button>
                         <span>От 17 000 ₽</span>
                     </div>
                 </CardOffer>
@@ -96,7 +96,7 @@ export default function Page() {
                         </li>
                     </ul>
                     <div className='button-with-text'>
-                        <Button className='button-with-text__button' size='large'>Заказать услугу</Button>
+                        <Button className='button-with-text__button button_callback' size='large'>Заказать услугу</Button>
                         <span>От 2 000 ₽</span>
                     </div>
                 </CardOffer>

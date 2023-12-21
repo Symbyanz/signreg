@@ -73,7 +73,7 @@ const GetThere = ({ className }: { className?: string }) => {
                                 </div>
                             </div>
                             <div className="get-there__column get-there__column_button">
-                                <Button className='get-there__button' size='large'>Обратный звонок</Button>
+                                <Button className='get-there__button button_callback' size='large'>Обратный звонок</Button>
                             </div>
                         </div>
                     </div>
